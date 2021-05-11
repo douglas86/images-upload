@@ -1,5 +1,6 @@
 import express from "express";
-import { keys } from "./keys";
+import mongoose from "mongoose"
+import { keys } from "./config/keys";
 
 const app = express();
 
@@ -12,7 +13,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() =>
-    app.listen(PORT, () => console.log(`Server is running on port: PORT`))
+    app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`))
   )
   .catch((err) => err.message);
 
